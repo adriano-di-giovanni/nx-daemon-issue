@@ -1,0 +1,24 @@
+{
+  "name": "playground-server",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/playground/server/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "playground-server:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "playground-server:build:development"
+        },
+        "production": {
+          "buildTarget": "playground-server:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
